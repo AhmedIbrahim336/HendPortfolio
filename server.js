@@ -8,9 +8,9 @@ dotenv.config();
 const app = express();
 
 app.use("/", emailMiddleware);
-app.use(express.static(path.join(__dirname, "build")));
+app.use(express.static(path.join(__dirname, "release")));
 app.get("/", function (req, res) {
-  res.sendFile(path.join(__dirname, "build", "index.html"));
+  res.sendFile(path.join(__dirname, "release", "index.html"));
 });
 
 app.get("*", function (req, res) {
